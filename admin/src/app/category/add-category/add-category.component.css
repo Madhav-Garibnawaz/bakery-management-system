@@ -1,0 +1,90 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Adjusted for admin panel view */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Main Form Container */
+.admin-form-wrapper {
+    width: 100%;
+    max-width: 550px;
+    padding: 20px;
+}
+
+/* Heading Section */
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff; /* Assumes a dark background for the admin panel */
+}
+
+.form-header h2 {
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.form-header p {
+    color: #aaa;
+}
+
+h2 {
+    color: black;
+}
+/* Card */
+.form-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* Labels */
+.form-label {
+    font-weight: 500;
+    color: #333;
+}
+
+/* Inputs */
+.form-control {
+    height: 50px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff !important;
+}
+
+.form-control:focus {
+    border-color: #ff7a00;
+    box-shadow: none;
+}
+
+/* File input custom spacing */
+input[type="file"] {
+    padding: 10px;
+}
+
+/* Button */
+.btn-bakery {
+    background-color: #ff7a00 !important;
+    border: none;
+    height: 50px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #fff !important;
+    transition: 0.3s;
+}
+
+.btn-bakery:hover {
+    background-color: #e56700 !important;
+    transform: translateY(-2px);
+}
+
+/* Subtle accent line */
+.accent-line {
+    width: 60px;
+    height: 4px;
+    background-color: #ff7a00;
+    margin: 10px auto 25px auto;
+    border-radius: 5px;
+}

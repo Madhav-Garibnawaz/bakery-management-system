@@ -1,0 +1,54 @@
+<!-- <p>add-category works!</p>
+<h2>Add Category</h2>
+
+    <input type="text" [(ngModel)]="categoryId"
+      placeholder="Category ID"><br><br>
+
+    <input type="text" [(ngModel)]="categoryName"
+      placeholder="Category Name"><br><br>
+
+    <input type="file" (change)="onFileChange($event)"><br><br>
+
+    <button (click)="addCategory()">Add Category</button>
+
+    <p style="color:green">{{message}}</p>
+   -->
+
+
+<div class="admin-form-wrapper mx-auto">
+
+    <div class="form-header">
+        <h2>Add Category</h2>
+        <div class="accent-line"></div>
+        <p>Manage your bakery product categories</p>
+    </div>
+
+    <div class="form-card">
+        <form (submit)="$event.preventDefault(); addCategory()">
+
+            <div class="mb-4">
+                <label class="form-label">Category ID</label>
+                <input type="text" name="categoryId" [(ngModel)]="categoryId" 
+                       class="form-control" placeholder="Enter Category ID">
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label">Category Name</label>
+                <input type="text" name="categoryName" [(ngModel)]="categoryName" 
+                       class="form-control" placeholder="Enter Category Name">
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label">Category Image</label>
+                <input type="file" (change)="onFileChange($event)" class="form-control">
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-bakery">Add Category</button>
+            </div>
+
+            <p *ngIf="message" class="text-success text-center mt-3">{{message}}</p>
+
+        </form>
+    </div>
+</div>

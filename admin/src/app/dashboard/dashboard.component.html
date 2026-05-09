@@ -1,0 +1,55 @@
+<div class="dashboard-container">
+  <div class="header-section">
+    <h2 class="system-title">System Overview</h2>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card category-border">
+      <div class="stat-content">
+        <div class="stat-info">
+          <span class="stat-label">CATEGORIES</span>
+          <h3 class="stat-number">{{ stats.categories }}</h3>
+        </div>
+        <div class="stat-icon bg-blue">📂</div>
+      </div>
+    </div>
+
+    <div class="stat-card product-border">
+      <div class="stat-content">
+        <div class="stat-info">
+          <span class="stat-label">PRODUCTS</span>
+          <h3 class="stat-number">{{ stats.products }}</h3>
+        </div>
+        <div class="stat-icon bg-green">📦</div>
+      </div>
+    </div>
+
+    <div class="stat-card user-border">
+      <div class="stat-content">
+        <div class="stat-info">
+          <span class="stat-label">USERS</span>
+          <h3 class="stat-number">{{ stats.users }}</h3>
+        </div>
+        <div class="stat-icon bg-cyan">👥</div>
+      </div>
+    </div>
+
+    <div class="stat-card order-border">
+      <div class="stat-content">
+        <div class="stat-info">
+          <span class="stat-label">TOTAL ORDERS</span>
+          <h3 class="stat-number">{{ stats.orders }}</h3>
+        </div>
+        <div class="stat-icon bg-yellow">💰</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="welcome-banner">
+    <div class="banner-text">
+      <h2>Hello, <span class="highlight">Bakery Admin!</span></h2>
+      <p>You have <strong>{{ stats.orders }}</strong> pending orders to check today.</p>
+      <button class="action-btn">View Recent Orders</button>
+    </div>
+  </div>
+</div>

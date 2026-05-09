@@ -1,0 +1,102 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Changed to start to allow scrolling on longer forms */
+    padding-top: 20px;
+    padding-bottom: 50px;
+    min-height: 80vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Main Form Container */
+.admin-form-wrapper {
+    width: 100%;
+    max-width: 600px; /* Slightly wider for product row fields */
+    padding: 20px;
+}
+
+/* Heading Section */
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    font-weight: 600;
+    font-size: 32px;
+    color: #333; /* Darker text for visibility */
+}
+
+.form-header p {
+    color: #777;
+}
+
+/* Form Card */
+.form-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+}
+
+/* Labels */
+.form-label {
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+/* Shared Input & Select Styling */
+.form-control, .form-select {
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9 !important;
+    transition: 0.3s;
+}
+
+textarea.form-control {
+    height: auto;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #ff7a00;
+    background-color: #fff !important;
+    box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.1);
+    outline: none;
+}
+
+/* Custom Button */
+.btn-bakery {
+    background-color: #ff7a00 !important;
+    border: none;
+    height: 52px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #fff !important;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-bakery:hover {
+    background-color: #e56700 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 122, 0, 0.3);
+}
+
+/* Subtle accent line */
+.accent-line {
+    width: 60px;
+    height: 4px;
+    background-color: #ff7a00;
+    margin: 10px auto 20px auto;
+    border-radius: 5px;
+}
+
+/* File input adjustment */
+input[type="file"] {
+    padding-top: 10px;
+}
+
