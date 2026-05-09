@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Sweet Bakery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./styles.css"> -->
+</head>
+<body>
+
+    <div class="main-wrapper d-flex align-items-center justify-content-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-9">
+                    <div class="card auth-card shadow-lg border-0 overflow-hidden">
+                        <div class="row g-0 flex-row-reverse">
+                            <div class="col-md-6 d-none d-md-block position-relative">
+                                <div class="bg-image h-100" style="background-image: url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=1980&auto=format&fit=crop');">
+                                    <div class="overlay-gradient"></div>
+                                    <div class="image-text p-5">
+                                        <h2 class="display-6 font-serif text-white fw-bold">Join Our Family</h2>
+                                        <p class="text-white-50">Create an account to order fresh bakery items and get exclusive deals.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 bg-white d-flex align-items-center">
+                                <div class="card-body p-4 p-lg-5">
+                                    <div class="text-center mb-4">
+                                        <h3 class="font-serif fw-bold text-dark-brown">Create Account</h3>
+                                        <p class="text-muted small">Fill in the details below</p>
+                                    </div>
+
+                                    <!-- <form> -->
+                                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                                        <div class="mb-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text bg-light border-end-0"><i class="fa-regular fa-user text-muted"></i></span>
+                                                <input type="text" formControlName="name" class="form-control bg-light border-start-0" placeholder="Full Name">
+                                            </div>
+                                            <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched"
+                                                class="text-danger small">
+                                            Name must start with capital and contain only letters
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text bg-light border-end-0"><i class="fa-regular fa-envelope text-muted"></i></span>
+                                                <input type="email" formControlName="email" class="form-control bg-light border-start-0" placeholder="Email Address">
+                                            </div>
+                                            <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+                                                class="text-danger small">
+                                            Enter valid email
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text bg-light border-end-0"><i class="fa-solid fa-phone text-muted"></i></span>
+                                                <input type="tel" formControlName="phone" class="form-control bg-light border-start-0" placeholder="Phone Number">
+                                            </div>
+
+                                            <div *ngIf="registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched"
+                                                class="text-danger small">
+                                            Enter valid 10-digit mobile number
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-2 mb-4">
+                                            <div class="col-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-light border-end-0"><i class="fa-solid fa-lock text-muted"></i></span>
+                                                    <input type="password" formControlName="password" class="form-control bg-light border-start-0" placeholder="Password">
+                                                </div>
+                                                <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                                                    class="text-danger small">
+                                                Minimum 6 characters required
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-light border-end-0"><i class="fa-solid fa-lock text-muted"></i></span>
+                                                    <input type="password" formControlName="confirmPassword" class="form-control bg-light border-start-0" placeholder="Confirm">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div *ngIf="registerForm.hasError('mismatch') && registerForm.get('confirmPassword')?.touched" class="text-danger small mb-3">
+                                            Passwords do not match!
+                                        </div>
+
+                                        <div class="d-grid mb-3">
+                                            <button type="submit" class="btn btn-gold btn-lg text-white shadow-sm">Sign Up</button>
+                                        </div>
+
+                                        <div class="text-center">
+                                            <p class="text-muted mb-0">Already a member? 
+                                                <a routerLink="/login" routerLinkActive="active" class="text-dark-brown fw-bold text-decoration-none">Log In</a>
+                                                <!-- <a href="login.html" class="text-dark-brown fw-bold text-decoration-none">Log In</a> -->
+                                            </p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

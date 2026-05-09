@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sweet Bakery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+
+    <div class="main-wrapper d-flex align-items-center justify-content-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-9">
+                    <div class="card auth-card shadow-lg border-0 overflow-hidden">
+                        <div class="row g-0">
+                            <div class="col-md-6 d-none d-md-block position-relative">
+                                <div class="bg-image h-100" style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=2072&auto=format&fit=crop');">
+                                    <div class="overlay-gradient"></div>
+                                    <div class="image-text p-5">
+                                        <h2 class="display-6 font-serif text-white fw-bold">Welcome Back</h2>
+                                        <p class="text-white-50">Log in to continue your journey with the finest baked goods in the city.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 bg-white d-flex align-items-center">
+                                <div class="card-body p-4 p-lg-5">
+                                    <div class="text-center mb-4">
+                                        <div class="brand-icon mb-2">
+                                            <i class="fa-solid fa-wheat-awn fa-2x text-gold"></i>
+                                        </div>
+                                        <h3 class="font-serif fw-bold text-dark-brown">Member Login</h3>
+                                        <p class="text-muted small">Please enter your details</p>
+                                    </div>
+
+                                    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                                        <div class="mb-3">
+                                            <label class="form-label text-uppercase small text-muted fw-bold">Email</label>
+                                            <div class="input-group input-group-lg">
+                                                <span class="input-group-text bg-light border-end-0"><i class="fa-regular fa-envelope text-muted"></i></span>
+                                                <input type="email" formControlName="email" class="form-control bg-light border-start-0" placeholder="user@example.com">
+                                            </div>
+                                            <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+                                                class="text-danger small">
+                                            Enter valid email
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label text-uppercase small text-muted fw-bold">Password</label>
+                                            <div class="input-group input-group-lg">
+                                                <span class="input-group-text bg-light border-end-0"><i class="fa-solid fa-lock text-muted"></i></span>
+                                                <input type="password" formControlName="password" class="form-control bg-light border-start-0" placeholder="••••••••">
+                                            </div>
+                                            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+                                                class="text-danger small">
+                                            Password is required
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                                                <label class="form-check-label text-muted small" for="rememberMe">Remember me</label>
+                                            </div>
+                                            <a href="#" class="text-gold text-decoration-none small fw-semibold">Forgot Password?</a>
+                                        </div>
+
+                                        <div class="d-grid mb-4">
+                                            <button type="submit" class="btn btn-gold btn-lg text-white shadow-sm">Log In</button>
+                                        </div>
+
+                                        <div class="text-center">
+                                            <p class="text-muted mb-0">Don't have an account? 
+                                                <a routerLink="/register" routerLinkActive="active" class="text-dark-brown fw-bold text-decoration-none">Create Account</a>
+                                                <!-- <a href="register.html" class="text-dark-brown fw-bold text-decoration-none">Create Account</a> -->
+                                            </p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

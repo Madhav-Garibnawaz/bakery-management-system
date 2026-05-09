@@ -1,0 +1,74 @@
+/* .img-twice::before {
+    position: absolute;
+    content: "";
+    width: 60%;
+    height: 80%;
+    top: 10%;
+    left: 20%;
+    background: var(--primary);
+    border: 25px solid var(--light);
+    border-radius: 6px;
+    z-index: -1;
+} */
+
+
+/* .my-color {
+    color: var(--primary);
+} */
+
+/* .btn {
+    background-color: var(--primary);
+} */
+
+/* This forces the 'img-twice' colored box to appear */
+:host ::ng-deep .img-twice::before {
+    position: absolute;
+    content: "";
+    width: 60%;
+    height: 80%;
+    top: 10%;
+    left: 20%;
+    background: #EAA636 !important; /* Your primary gold color */
+    border: 25px solid #FDF5EB !important; /* Your light cream color */
+    border-radius: 6px;
+    z-index: -1;
+}
+
+/* Force the text primary color */
+:host ::ng-deep .text-primary {
+    color: #EAA636 !important;
+}
+
+/* Ensure the Page Header background shows up */
+/* :host ::ng-deep .page-header {
+    background: linear-gradient(rgba(30, 25, 22, .4), rgba(30, 25, 22, .4)), url('/assets/img/carousel-1.jpg') center center no-repeat !important;
+    background-size: cover !important;
+} */
+
+/* Fix for the check icons */
+:host ::ng-deep .fa-check {
+    color: #EAA636 !important;
+}
+
+/* --- FIX FOR THE BUTTON --- */
+:host ::ng-deep .btn-primary {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: #FFFFFF !important;
+    transition: .5s;
+}
+
+/* :host ::ng-deep .btn-primary:hover {
+    background-color: var(--dark) !important;
+    border-color: var(--dark) !important;
+} */
+
+:host ::ng-deep .btn-primary:hover {
+    /* This makes the color 15% lighter automatically */
+    /* filter: brightness(1.15);  */
+    /* background-color: var(--primary) !important; 
+    border-color: var(--primary) !important; */
+    background-color: #edb354 !important;
+    border-color: #ecaf4a !important;
+    color: #FFFFFF !important;
+}

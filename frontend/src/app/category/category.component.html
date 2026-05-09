@@ -1,0 +1,77 @@
+<!-- Category Start -->
+<div class="container-xxl py-6 category-section">
+  <div class="container">
+
+    <!-- Section Title -->
+    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+      <p class="text-uppercase mb-2">// Categories</p>
+      <h1 class="display-6 mb-4">
+        Explore Our Bakery Categories
+      </h1>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Categories -->
+      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s" *ngFor="let cat of categories">
+        <div class="category-item position-relative overflow-hidden rounded"
+            [routerLink]="['/product']"
+            [queryParams]="{ category: cat.categoryName }">
+
+          <img *ngIf="cat.photo"
+                [src]="'http://localhost:3000/uploads/' + cat.photo" 
+                class="img-fluid w-100" 
+                [alt]="cat.categoryName">
+
+          <img *ngIf="!cat.photo" 
+               src="assets/img/product-1.jpg" 
+               class="img-fluid w-100" 
+               style="height: 300px; object-fit: cover;" 
+               alt="Default Category Image">
+
+          <div class="category-overlay">
+            <h4>{{ cat.categoryName }}</h4>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bread -->
+      <!-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="category-item position-relative overflow-hidden rounded">
+          <img src="assets/img/product-2.jpg" class="img-fluid" alt="Bread">
+          <div class="category-overlay">
+            <h4>Bread</h4>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Cookies -->
+      <!-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="category-item position-relative overflow-hidden rounded">
+          <img src="assets/img/product-3.jpg" class="img-fluid" alt="Cookies">
+          <div class="category-overlay">
+            <h4>Cookies</h4>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Pastry -->
+      <!-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+        <div class="category-item position-relative overflow-hidden rounded">
+          <img src="assets/img/product-3.jpg" class="img-fluid" alt="Pastry">
+          <div class="category-overlay">
+            <h4>Pastry</h4>
+          </div>
+        </div>
+      </div> -->
+
+
+      <div *ngIf="categories.length === 0" class="text-center text-muted mt-5 py-5">
+        <h4><i class="fas fa-folder-open mb-3 fa-2x"></i></h4>
+        <h4>No categories available at the moment.</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Category End -->

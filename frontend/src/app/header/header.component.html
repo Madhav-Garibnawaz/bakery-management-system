@@ -1,0 +1,126 @@
+<!-- Topbar Start -->
+<div class="top-bar text-light">
+  <div class="container d-none d-lg-flex justify-content-between align-items-center">
+    
+    <div>
+      <a class="small text-light me-3"
+         routerLink="/"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">
+         Home
+      </a>
+
+      <a class="small text-light me-3" href="#">Career</a>
+      <a class="small text-light me-3" href="#">Terms</a>
+      <a class="small text-light" href="#">Privacy</a>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <small class="me-3">Follow us:</small>
+      <a class="social-icon" href="#"><i class="fab fa-facebook-f"></i></a>
+      <a class="social-icon" href="#"><i class="fab fa-twitter"></i></a>
+      <a class="social-icon" href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a class="social-icon" href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+
+  </div>
+</div>
+<!-- Topbar End -->
+
+
+<nav class="navbar navbar-expand-lg sticky-top py-lg-0 px-lg-5 custom-navbar wow fadeIn" data-wow-delay="0.1s">
+
+  <!-- Logo -->
+  <a routerLink="/" class="navbar-brand ms-4 ms-lg-0">
+    <h1 class="navbar-brand m-0">Baker</h1>
+  </a>
+
+  <!-- Toggle -->
+  <button type="button"
+          class="navbar-toggler me-4"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Links -->
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+
+    <div class="navbar-nav mx-auto p-4 p-lg-0">
+
+      <a routerLink="/"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }"
+         class="nav-item nav-link">
+        Home
+      </a>
+
+      <a routerLink="/about"
+         routerLinkActive="active"
+         class="nav-item nav-link">
+        About
+      </a>
+
+      <a routerLink="/services"
+         routerLinkActive="active"
+         class="nav-item nav-link">
+        Services
+      </a>
+
+      <a routerLink="/product"
+         routerLinkActive="active"
+         class="nav-item nav-link">
+        Products
+      </a>
+
+      <a routerLink="/contact"
+         routerLinkActive="active"
+         class="nav-item nav-link">
+        Contact
+      </a>
+
+      <a *ngIf="!user" routerLink="/login"
+         routerLinkActive="active"
+         class="nav-item nav-link">
+        Login
+      </a>
+      <!-- <a *ngIf="!user" routerLink="/register"
+         routerLinkActive="active"
+         class="nav-item nav-link">
+        Register
+      </a> -->
+
+      <div *ngIf="user" class="nav-item nav-link user-dropdown">
+        <span class="fw-bold" style="color: #D4A373;">
+          <i class="fa-regular fa-user me-1"></i> {{ user.name || user.firstname || 'User' }}
+        </span>
+        
+        <div class="dropdown-content">
+          <a (click)="logout()" class="logout-btn text-danger">
+            <i class="fa-solid fa-arrow-right-from-bracket me-2"></i> Logout
+          </a>
+        </div>
+      </div>
+
+      <a routerLink="/cart"
+         routerLinkActive="active"
+         class="nav-item nav-link">
+        Cart
+      </a>
+
+    </div>
+
+    <!-- Call Section -->
+    <div class="d-none d-lg-flex align-items-center">
+      <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle">
+        <i class="fa fa-phone phone-icon"></i>
+      </div>
+      <div class="ps-3">
+        <small class="mb-0">Call Us</small>
+        <p class="text-light fs-5 mb-0">+012 345 6789</p>
+      </div>
+    </div>
+
+  </div>
+
+</nav>

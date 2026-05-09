@@ -1,0 +1,35 @@
+/* Page Header Background Fix */
+/* :host ::ng-deep .page-header {
+    background: linear-gradient(rgba(30, 25, 22, .4), rgba(30, 25, 22, .4)), 
+                url('/assets/img/carousel-1.jpg') center center no-repeat !important;
+    background-size: cover !important;
+} */
+
+/* The primary colored box behind images */
+:host ::ng-deep .img-twice::before {
+    position: absolute;
+    content: "";
+    width: 60%;
+    height: 80%;
+    top: 10%;
+    left: 20%;
+    background: #EAA636 !important; /* var(--primary) */
+    border: 25px solid #FDF5EB !important; /* var(--light) */
+    border-radius: 6px;
+    z-index: -1;
+}
+
+/* Ensure the circle icons stay gold/primary */
+:host ::ng-deep .bg-primary {
+    background-color: #EAA636 !important;
+}
+
+/* Fix for text alignment if needed */
+.display-6 {
+    color: var(--dark);
+}
+
+/* Force the text primary color */
+:host ::ng-deep .text-primary {
+    color: #EAA636 !important;
+}

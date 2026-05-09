@@ -1,0 +1,50 @@
+/* Header Background with Bakery Image */
+/* .page-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://img.freepik.com/free-photo/delicious-bread-table_23-2148115200.jpg') center center no-repeat;
+    background-size: cover;
+    margin-bottom: 6rem;
+} */
+
+/* Theme Colors */
+.text-primary {
+    color: #EAA43A !important; /* Golden Bakery Color */
+}
+
+.btn-primary {
+    background-color: #EAA43A !important;
+    border-color: #EAA43A !important;
+    color: #ffffff !important;
+    transition: 0.5s;
+}
+
+.btn-primary:hover {
+    background-color: #d18d2d !important;
+}
+
+/* Breadcrumb Styling */
+.breadcrumb-item + .breadcrumb-item::before {
+    color: #ffffff;
+}
+
+/* Form Styling to match Template */
+.form-floating > .form-control:focus {
+    border-color: #EAA43A;
+    box-shadow: 0 0 0 0.25rem rgba(234, 164, 58, 0.25);
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+/* Animation Placeholders (If WOW.js is not installed) */
+.wow {
+    visibility: visible !important;
+}
+
+/* Padding and Spacing */
+.py-6 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}

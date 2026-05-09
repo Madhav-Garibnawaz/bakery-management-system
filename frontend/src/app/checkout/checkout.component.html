@@ -1,0 +1,80 @@
+<div class="container mt-4">
+  <h3 class="text-center mb-4">Checkout</h3>
+
+  <div class="row">
+
+    <!-- LEFT SIDE: CART SUMMARY -->
+    <div class="col-md-6">
+      <h5>Order Summary</h5>
+
+      <ul class="list-group mb-3">
+        <li class="list-group-item"
+            *ngFor="let item of cart">
+          {{ item.pname }} × {{ item.qty }}
+          <span class="float-end">
+            ₹{{ item.price * item.qty }}
+          </span>
+        </li>
+      </ul>
+
+      <h5>Total: ₹{{ total }}</h5>
+    </div>
+
+    <!-- RIGHT SIDE: CUSTOMER DETAILS -->
+    <div class="col-md-6">
+      <h5>Shipping Details</h5>
+
+      <input class="form-control mb-2"
+             placeholder="Full Name"
+             [(ngModel)]="formData.name">
+
+      <input class="form-control mb-2"
+             placeholder="Mobile Number"
+             [(ngModel)]="formData.phone">
+
+      <textarea class="form-control mb-2"
+                placeholder="Address"
+                [(ngModel)]="formData.address">
+      </textarea>
+
+      <input class="form-control mb-2"
+             placeholder="City"
+             [(ngModel)]="formData.city">
+
+      <input class="form-control mb-2"
+             placeholder="Pincode"
+             [(ngModel)]="formData.pincode">
+
+      <select class="form-control mb-3"
+              [(ngModel)]="formData.paymentMethod">
+        <option>Cash on Delivery</option>
+        <option>UPI</option>
+        <option>Card</option>
+      </select>
+
+      <!-- UPI FIELD -->
+<div *ngIf="formData.paymentMethod === 'UPI'">
+  <input class="form-control mb-2"
+         placeholder="Enter UPI ID (e.g. name@upi)">
+</div>
+
+<!-- CARD FIELDS -->
+<div *ngIf="formData.paymentMethod === 'Card'">
+  <input class="form-control mb-2"
+         placeholder="Card Number">
+
+  <input class="form-control mb-2"
+         placeholder="Expiry Date (MM/YY)">
+
+  <input class="form-control mb-2"
+         placeholder="CVV">
+</div>
+      <button class="btn btn-success w-100"
+              (click)="placeOrder()">
+        Place Order
+      </button>
+
+    </div>
+
+  </div>
+</div>
