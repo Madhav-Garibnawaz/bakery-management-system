@@ -4,14 +4,20 @@ const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
 
+require('dotenv').config();
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
 // ===== MongoDB =====
-mongoose.connect('mongodb://127.0.0.1:27017/bakery')
-.then(() => console.log('MongoDB Connected'));
+// mongoose.connect('mongodb://127.0.0.1:27017/bakery')
+// .then(() => console.log('MongoDB Connected'));
+
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log('MongoDB Connected'))
+.catch((err) => console.log(err));
 
 // ===== Category Schema =====
 const CategorySchema = new mongoose.Schema({
@@ -261,4 +267,8 @@ app.post('/api/login', async (req, res) => {
 
 
 // ===== Server =====
-app.listen(3000, () => console.log('Server started on port 3000'));
+// app.listen(3000, () => console.log('Server started on port 3000'));
+
+app.listen(process.env.PORT || 3000, () => 
+  console.log('Server started')
+);
