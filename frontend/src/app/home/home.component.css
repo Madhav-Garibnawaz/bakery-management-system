@@ -1,9 +1,5 @@
 
 /*** Facts ***/
-
-/* .contianer {
-    background: #fcf5ec;
-} */
 .fact-item {
     transition: .5s;
     color: var(--primary);

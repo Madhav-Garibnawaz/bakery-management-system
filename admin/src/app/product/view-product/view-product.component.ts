@@ -19,21 +19,12 @@ export class ViewProductComponent implements OnInit {
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
-  // ngOnInit() {
-  //   this.http.get<any[]>('http://localhost:3000/api/product')
-  //     .subscribe(data => {
-  //       this.products = data;
-  //       this.cdr.detectChanges(); // Trigger change detection after data is loaded
-  //     });
-  // }
-
-
   ngOnInit(){
     this.load();
   }
 
   load() {
-    this.http.get<any[]>('http://localhost:3000/api/product')
+    this.http.get<any[]>('https://bakery-management-system-0yj2.onrender.com/api/product')
       .subscribe(data => {
         this.products = data;
         this.filteredProducts = data; // Initialize filtered list
@@ -63,7 +54,7 @@ export class ViewProductComponent implements OnInit {
 
   delete(id: string){
     if(confirm('Delete this product?')){
-      this.http.delete(`http://localhost:3000/api/product/${id}`)
+      this.http.delete(`https://bakery-management-system-0yj2.onrender.com/api/product/${id}`)
       .subscribe(() => this.load());
     }
   }
@@ -80,7 +71,7 @@ export class ViewProductComponent implements OnInit {
       formData.append('photo', this.selectedFile);
     }
 
-    this.http.put(`http://localhost:3000/api/product/${p._id}`, formData)
+    this.http.put(`https://bakery-management-system-0yj2.onrender.com/api/product/${p._id}`, formData)
       .subscribe(() => {
         alert('Product Updated');
         this.editId = null;

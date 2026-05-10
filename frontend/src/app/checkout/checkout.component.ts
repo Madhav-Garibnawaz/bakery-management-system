@@ -1,16 +1,3 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-checkout',
-//   imports: [],
-//   templateUrl: './checkout.component.html',
-//   styleUrl: './checkout.component.css',
-// })
-// export class Checkout {
-
-// }
-
-
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';

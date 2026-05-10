@@ -1,31 +1,3 @@
-// import { Component } from '@angular/core';
-// import { FormsModule } from '@angular/forms';
-// import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-
-// @Component({
-//   standalone: true,
-//   selector: 'app-login',
-//   imports: [FormsModule],
-//   template: `
-//     <h2>Login</h2>
-//     <input [(ngModel)]="email" placeholder="Email"><br><br>
-//     <input [(ngModel)]="password" type="password" placeholder="Password"><br><br>
-//     <button (click)="login()">Login</button>
-//   `
-// })
-
-// export class Login {
-//   email = '';
-//   password = '';
-
-//   login() {
-//     signInWithEmailAndPassword(getAuth(), this.email, this.password)
-//       .then(() => alert('Login Success'))
-//       .catch(err => alert(err.message));
-//   }
-// }
-
-
 import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common'; // Added for extra utility
@@ -50,30 +22,6 @@ export class Login implements AfterViewInit { // Implement AfterViewInit to trig
   ngAfterViewInit() {
     this.cdr.detectChanges(); // This forces the button to "wake up" and show its colors immediately
   }
-
-  // login() {
-  //   // Basic validation
-  //   if (!this.email || !this.password) {
-  //     alert('Please enter both email and password');
-  //     return;
-  //   }
-
-  //   signInWithEmailAndPassword(getAuth(), this.email, this.password)
-  //     .then(() => alert('Admin Login Success'))
-  //     .catch(err => alert(err.message));
-
-
-  //   // signInWithEmailAndPassword(getAuth(), this.email, this.password)
-  //   //   .then(() => {
-  //   //     alert('Admin Login Success');
-  //   //     // 3️⃣ Navigate to Admin Dashboard/Category page after login
-  //   //     this.router.navigate(['/admin-category']); 
-  //   //   })
-  //   //   .catch(err => {
-  //   //     // Handles wrong password or user not found
-  //   //     alert(err.message);
-  //   //   });
-  // }
 
 
   login() {

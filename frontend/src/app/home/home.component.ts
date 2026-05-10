@@ -14,7 +14,6 @@ export class Home implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      // Small timeout ensures Angular finishes change detection
       setTimeout(() => {
         this.reinitCarousel();
       }, 50);
@@ -24,12 +23,10 @@ export class Home implements AfterViewInit, OnDestroy {
   reinitCarousel(): void {
     const $carousel = $(".testimonial-carousel");
     
-    // 1. Destroy if already initialized to prevent "ghost" carousels
     if ($carousel.hasClass('owl-loaded')) {
       $carousel.owlCarousel('destroy');
     }
 
-    // 2. Initialize
     $carousel.owlCarousel({
       autoplay: false,
       smartSpeed: 1000,
@@ -51,7 +48,6 @@ export class Home implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // Clean up when leaving the page to prevent memory leaks
     if (isPlatformBrowser(this.platformId)) {
       $(".testimonial-carousel").owlCarousel('destroy');
     }

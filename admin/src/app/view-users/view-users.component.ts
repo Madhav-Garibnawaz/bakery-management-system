@@ -1,16 +1,3 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-view-users',
-//   imports: [],
-//   templateUrl: './view-users.html',
-//   styleUrl: './view-users.css',
-// })
-// export class ViewUsers {
-
-// }
-
-
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -48,7 +35,7 @@ export class ViewUsers implements OnInit {
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
-    this.http.get('http://localhost:3000/api/users').subscribe((data: any) => {
+    this.http.get('https://bakery-management-system-0yj2.onrender.com/api/users').subscribe((data: any) => {
       this.users = data;
       this.cdr.detectChanges(); //here we have to manually trigger refresh
     });

@@ -1,43 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-// import { FormsModule } from '@angular/forms';
-// import { HttpClient, HttpClientModule } from '@angular/common/http';
-
-// @Component({
-//   selector: 'app-product',
-//   standalone: true,
-//   imports: [CommonModule, FormsModule, HttpClientModule],
-//   templateUrl: './add-product.component.html',
-//   styleUrl: './add-product.component.css'
-// })
-// export class AddProductComponent implements OnInit {
-
-//   categories: any[] = [];
-//   product: any = {};
-//   file: any;
-
-//   constructor(private http: HttpClient) {}
-
-// ngOnInit() {
-//   this.http.get<any[]>('http://localhost:3000/api/category')
-//     .subscribe(data => {
-//       this.categories = data;
-//     });
-// }
-//   onFile(e: any) {
-//     this.file = e.target.files[0];
-//   }
-
-//   save() {
-//     const fd = new FormData();
-//     Object.keys(this.product).forEach(k => fd.append(k, this.product[k]));
-//     fd.append('photo', this.file);
-
-//     this.http.post('http://localhost:3000/api/product', fd)
-//       .subscribe(() => alert('Product Saved'));
-//   }
-// }
-
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core'; // 1. Added ChangeDetectorRef
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -67,7 +27,7 @@ export class AddProductComponent implements OnInit {
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
-    this.http.get<any[]>('http://localhost:3000/api/category')
+    this.http.get<any[]>('https://bakery-management-system-0yj2.onrender.com/api/category')
       .subscribe({
         next: (data) => {
           // this.categories = data;
@@ -102,7 +62,7 @@ export class AddProductComponent implements OnInit {
     
     fd.append('photo', this.file);
 
-    this.http.post('http://localhost:3000/api/product', fd)
+    this.http.post('https://bakery-management-system-0yj2.onrender.com/api/product', fd)
       .subscribe({
         next: () => {
           alert('Product Saved Successfully!');

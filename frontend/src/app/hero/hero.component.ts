@@ -1,15 +1,3 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-hero',
-//   standalone: true,
-//   // imports: [],
-//   templateUrl: './hero.component.html',
-//   styleUrl: './hero.component.css'
-// })
-// export class Hero {}
-
-
 import { Component, AfterViewInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 

@@ -1,37 +1,3 @@
-<!-- <div class="container mt-4">
-  <h3 class="text-center mb-4">Product List</h3>
-
-  <div class="row">
-    
-    <div class="col-md-4 mb-4" *ngFor="let p of (products$ | async)">
-      <div class="card h-100 shadow">
-
-        <img *ngIf="p.photo"
-             [src]="'http://localhost:3000/uploads/' + p.photo"
-             class="card-img-top"
-             style="height:200px; object-fit:cover;">
-
-        <div class="card-body">
-          <h5 class="card-title">{{ p.pname }}</h5>
-
-          <p class="card-text">
-            <strong>Category:</strong> {{ p.category }} <br>
-            <strong>Description:</strong> {{ p.pdesc }} <br>
-            <strong>Price:</strong> ₹{{ p.price }} <br>
-            <strong>Qty:</strong> {{ p.qty }} <br>
-            <strong>Date:</strong> {{ p.date | date }}
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div *ngIf="products$.length === 0" class="text-center text-muted">
-    No products available
-  </div>
-</div> -->
-
 <div class="container-fluid page-header py-6 wow fadeIn" data-wow-delay="0.1s">
     <div class="container text-center pt-5 pb-3">
         <h1 class="display-4 text-white animated slideInDown mb-3">Products</h1>
@@ -69,9 +35,6 @@
         </div>
 
         <div class="row g-4">
-
-            <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let p of (products$ | async)"> -->
-            <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let p of products"> -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let p of filteredProducts">
                 <div class="card product-card h-100 border-0 shadow-sm">
 
@@ -103,9 +66,6 @@
                             <span class="fs-5 fw-bold">₹{{ p.price }}</span>
                         </div>
 
-                        <!-- <p class="small mb-1"><strong>Qty:</strong> {{ p.qty }} Available</p> -->
-                        <!-- <p class="small text-muted mb-3"><strong>Baked On:</strong> {{ p.date | date:'dd MMM yyyy' }}</p> -->
-
                         <div class="d-flex gap-2 mt-auto">
                             <a class="btn btn-outline-dark btn-sm flex-grow-1 rounded-0">View</a>
                             <a class="btn btn-orange btn-sm flex-grow-1 rounded-0" (click)="addToCart(p)">
@@ -119,7 +79,6 @@
 
         </div>
 
-        <!-- <div *ngIf="(products$ | async)?.length === 0" class="text-center text-muted mt-5 py-5"> -->
         <div *ngIf="filteredProducts.length === 0" class="text-center text-muted mt-5 py-5">
             <h4><i class="fas fa-box-open mb-3 fa-2x"></i></h4>
             <h4>No products available at the moment.</h4>

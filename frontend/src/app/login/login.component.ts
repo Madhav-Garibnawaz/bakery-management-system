@@ -1,18 +1,3 @@
-// import { Component } from '@angular/core';
-// import { RouterLink, RouterLinkActive } from '@angular/router';
-
-// @Component({
-//   selector: 'app-login',
-//   standalone: true,
-//   imports: [RouterLink, RouterLinkActive],
-//   templateUrl: './login.component.html',
-//   styleUrls: ['./login.component.css']
-// })
-// export class Login {
-
-// }
-
-
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
@@ -35,33 +20,6 @@ export class Login {
       password: new FormControl('', [Validators.required])
     });
   }
-
-  // onLogin() {
-  //   if (this.loginForm.valid) {
-  //     const apiUrl = 'http://localhost:3000/api/login';
-      
-  //     this.http.post(apiUrl, this.loginForm.value).subscribe({
-  //       next: (res: any) => {
-  //         alert("Welcome back, " + res.user.name + "!");
-  //         // Store user info in localStorage if you want to keep them logged in
-  //         localStorage.setItem('user', JSON.stringify(res.user));
-          
-  //         // Redirect based on role
-  //         if (res.user.role === 'admin') {
-  //           this.router.navigate(['/admin']);
-  //         } else {
-  //           this.router.navigate(['/home']);
-  //         }
-  //       },
-  //       error: (err: any) => {
-  //         alert(err.error.message || "Login failed");
-  //       }
-  //     });
-  //   } else {
-  //     alert("Please enter valid credentials");
-  //   }
-  // }
-
 
   onLogin() {
 
