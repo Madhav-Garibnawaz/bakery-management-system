@@ -70,7 +70,7 @@ export class Login {
       return;
     }
 
-    this.http.post('http://localhost:3000/api/login', this.loginForm.value).subscribe({
+    this.http.post('https://bakery-management-system-0yj2.onrender.com/api/login', this.loginForm.value).subscribe({
       next: (res: any) => {
 
         const userData = res.user || res;

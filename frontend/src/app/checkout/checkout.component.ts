@@ -65,7 +65,7 @@ export class Checkout implements OnInit {
       date: new Date()
     };
 
-    this.http.post('http://localhost:3000/api/order', orderData)
+    this.http.post('https://bakery-management-system-0yj2.onrender.com/api/order', orderData)
       .subscribe(() => {
 
         localStorage.removeItem('cart');

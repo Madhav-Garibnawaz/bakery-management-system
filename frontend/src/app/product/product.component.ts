@@ -226,7 +226,7 @@ export class Product implements OnInit {
 
   ngOnInit() {
     // 1. Load products from backend
-    this.http.get<any[]>('http://localhost:3000/api/product')
+    this.http.get<any[]>('https://bakery-management-system-0yj2.onrender.com/api/product')
       .subscribe(data => {
         this.allProducts = data;
 

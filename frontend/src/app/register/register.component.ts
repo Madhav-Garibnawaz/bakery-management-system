@@ -154,7 +154,8 @@ export class Register {
   onSubmit() {
     if (this.registerForm.valid) {
       // Endpoint must match the new route in server.js
-      const apiUrl = 'http://localhost:3000/api/register'; 
+      // const apiUrl = 'http://localhost:3000/api/register'; 
+      const apiUrl = 'https://bakery-management-system-0yj2.onrender.com/api/register'; 
 
       this.http.post(apiUrl, this.registerForm.value).subscribe({
         next: (res: any) => {

@@ -20,7 +20,8 @@ export class Category implements OnInit {
 
   ngOnInit() {
     // Fetch categories from the backend
-    this.http.get<any[]>('http://localhost:3000/api/category')
+    // this.http.get<any[]>('http://localhost:3000/api/category')
+    this.http.get<any[]>('https://bakery-management-system-0yj2.onrender.com/api/category')
       .subscribe({
         next: (data) => {
           this.categories = data;
