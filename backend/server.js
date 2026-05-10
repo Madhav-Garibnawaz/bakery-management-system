@@ -11,6 +11,11 @@ app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
+
+app.get('/', (req, res) => {
+  res.send('Bakery Backend Running');
+});
+
 // ===== MongoDB =====
 // mongoose.connect('mongodb://127.0.0.1:27017/bakery')
 // .then(() => console.log('MongoDB Connected'));
