@@ -66,9 +66,19 @@ app.post('/api/category', upload.single('photo'), async (req, res) => {
 });
 
 // 📋 View Categories (USED BY DROPDOWN)
+// app.get('/api/category', async (req, res) => {
+//   const data = await Category.find();
+//   res.json(data);
+// });
+
 app.get('/api/category', async (req, res) => {
-  const data = await Category.find();
-  res.json(data);
+  try {
+    const data = await Category.find();
+    res.json(data);
+  } catch(err) {
+    console.log(err);
+    res.status(500).json({ error: err.message });
+  }
 });
 
 // DELETE category
@@ -208,9 +218,19 @@ app.post('/api/order', async (req, res) => {
 
 
 // ===== Get All Orders (For Admin) =====
+// app.get('/api/order', async (req, res) => {
+//   const orders = await Order.find().sort({ date: -1 });
+//   res.json(orders);
+// });
+
 app.get('/api/order', async (req, res) => {
-  const orders = await Order.find().sort({ date: -1 });
-  res.json(orders);
+  try {
+    const orders = await Order.find().sort({ date: -1 });
+    res.json(orders);
+  } catch(err) {
+    console.log(err);
+    res.status(500).json({ error: err.message });
+  }
 });
 
 // DELETE an order by ID
@@ -237,12 +257,22 @@ const User = mongoose.model('User', new mongoose.Schema({
 
 
 // 2. GET all users API
+// app.get('/api/users', async (req, res) => {
+//   try{
+//     const users = await User.find();
+//     res.json(users);
+//   } catch (err) {
+//     res.status(500).json({ error: err.message})
+//   }
+// });
+
 app.get('/api/users', async (req, res) => {
-  try{
+  try {
     const users = await User.find();
     res.json(users);
-  } catch (err) {
-    res.status(500).json({ error: err.message})
+  } catch(err) {
+    console.log(err);
+    res.status(500).json({ error: err.message });
   }
 });
 
