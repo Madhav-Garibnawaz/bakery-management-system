@@ -117,8 +117,18 @@ app.post('/api/product', upload.single('photo'), async (req, res) => {
 });
 
 // 📋 View Products (optional)
+// app.get('/api/product', async (req, res) => {
+//   res.json(await Product.find());
+// });
+
 app.get('/api/product', async (req, res) => {
-  res.json(await Product.find());
+  try {
+    const products = await Product.find();
+    res.json(products);
+  } catch(err) {
+    console.log(err);
+    res.status(500).json({ error: err.message });
+  }
 });
 
 // Delete Product
